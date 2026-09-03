@@ -1,0 +1,68 @@
+{
+  "framework": "ISO/IEC 42001:2026",
+  "organization": "NovaTech Financial Group",
+  "lastUpdated": "2026-08-15",
+  "annexA": {
+    "A.2": {
+      "name": "Policies related to AI",
+      "controls": [
+        { "id": "A.2.1", "name": "AI Policy", "applicable": true, "status": "implemented", "artifact": "02-leadership-commitment/ai-policy.md" },
+        { "id": "A.2.2", "name": "Policy Review", "applicable": true, "status": "implemented", "artifact": "02-leadership-commitment/ai-policy.md" }
+      ]
+    },
+    "A.3": {
+      "name": "Internal organization",
+      "controls": [
+        { "id": "A.3.1", "name": "Roles and Responsibilities", "applicable": true, "status": "implemented", "artifact": "02-leadership-commitment/roles-responsibilities.md" },
+        { "id": "A.3.2", "name": "Reporting Concerns", "applicable": true, "status": "in_progress", "artifact": "05-operation/incident-response.md" }
+      ]
+    },
+    "A.4": {
+      "name": "Resources for AI systems",
+      "controls": [
+        { "id": "A.4.1", "name": "Resource Allocation", "applicable": true, "status": "implemented", "artifact": "01-aims-scope/aims-scope-statement.md" }
+      ]
+    },
+    "A.5": {
+      "name": "Assessing impacts of AI systems",
+      "controls": [
+        { "id": "A.5.1", "name": "Impact Assessment", "applicable": true, "status": "implemented", "artifact": "03-planning/ai-impact-assessment.md" },
+        { "id": "A.5.2", "name": "Risk Assessment", "applicable": true, "status": "implemented", "artifact": "03-planning/ai-risk-assessment.md" }
+      ]
+    },
+    "A.6": {
+      "name": "AI system life cycle",
+      "controls": [
+        { "id": "A.6.1", "name": "Requirements and Design", "applicable": true, "status": "implemented", "artifact": "05-operation/ai-system-lifecycle-controls.md" },
+        { "id": "A.6.2", "name": "Development and Testing", "applicable": true, "status": "in_progress", "artifact": "05-operation/ai-system-lifecycle-controls.md" },
+        { "id": "A.6.3", "name": "Deployment and Operation", "applicable": true, "status": "in_progress", "artifact": "05-operation/ai-system-lifecycle-controls.md" },
+        { "id": "A.6.4", "name": "Decommissioning", "applicable": true, "status": "planned", "artifact": "05-operation/ai-system-lifecycle-controls.md" }
+      ]
+    },
+    "A.7": {
+      "name": "Data for AI systems",
+      "controls": [
+        { "id": "A.7.1", "name": "Data Acquisition and Preparation", "applicable": true, "status": "implemented", "artifact": "05-operation/data-governance.md" },
+        { "id": "A.7.2", "name": "Data Quality and Provenance", "applicable": true, "status": "implemented", "artifact": "05-operation/data-governance.md" }
+      ]
+    },
+    "A.8": {
+      "name": "Information for interested parties",
+      "controls": [
+        { "id": "A.8.1", "name": "Transparency Information", "applicable": true, "status": "implemented", "artifact": "05-operation/third-party-management.md" }
+      ]
+    },
+    "A.9": {
+      "name": "Use of AI systems",
+      "controls": [
+        { "id": "A.9.1", "name": "Responsible Use", "applicable": true, "status": "implemented", "artifact": "05-operation/third-party-management.md" }
+      ]
+    },
+    "A.10": {
+      "name": "Third-party and customer relationships",
+      "controls": [
+        { "id": "A.10.1", "name": "Vendor Management", "applicable": true, "status": "in_progress", "artifact": "05-operation/third-party-management.md" }
+      ]
+    }
+  }
+}
