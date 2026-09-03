@@ -17,6 +17,21 @@
 | **Phase 5: Performance Evaluation** | 25-28 | Internal audit, management review, address nonconformities | Audit Report, Management Review Minutes, CAPA Records | Internal Audit, CAIO |
 | **Phase 6: Certification** | 29-32 | Gap assessment, Stage 1 & 2 audits, certification | Gap Report, Audit Findings, ISO 42001 Certificate | External Consultant, Certification Body |
 
+Phase 1 → Phase 2 → Phase 3 → Phase 4 → Phase 5 → Phase 6
+(4 wks) (4 wks) (6 wks) (10 wks) (4 wks) (4 wks)
+
+
+**Total Duration:** 32 weeks
+
+---
+
+## 10. Signatories
+
+| Signatory | Title | Signature | Date |
+|-----------|-------|-----------|------|
+| | CAIO | | |
+| | Head of Internal Audit | | |
+| | External Consultant | | |
 ---
 
 ## 2. Phase 1: Planning & Scoping (Weeks 1-4)
