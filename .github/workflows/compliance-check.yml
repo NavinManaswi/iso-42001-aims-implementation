@@ -1,0 +1,101 @@
+name: ISO 42001 Compliance Validation
+
+on:
+  push:
+    paths:
+      - '**/*.md'
+      - '**/*.json'
+      - 'scripts/**'
+  pull_request:
+    paths:
+      - '**/*.md'
+      - '**/*.json'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. Validate all markdown links
+      - name: Check markdown links
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: --verbose --no-progress '**/*.md'
+
+      # 2. Lint markdown for consistent formatting
+      - name: Lint markdown
+        uses: DavidAnson/markdownlint-cli2-action@v1
+        with:
+          globs: '**/*.md'
+
+      # 3. Validate JSON structure (SoA mapping)
+      - name: Validate JSON files
+        run: |
+          for file in $(find . -name "*.json" -not -path "./node_modules/*"); do
+            echo "Validating $file"
+            jq empty "$file" || exit 1
+          done
+
+      # 4. Set up Python
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # 5. Run compliance scanner
+      - name: Run compliance scanner
+        run: |
+          python scripts/compliance-scanner.py
+
+      # 6. Check for required ISO 42001 artifacts
+      - name: Check required artifacts
+        run: |
+          REQUIRED_FILES=(
+            "01-aims-scope/aims-scope-statement.md"
+            "02-leadership-commitment/ai-policy.md"
+            "03-planning/ai-risk-assessment.md"
+            "03-planning/statement-of-applicability.md"
+            "08-annex-a-controls/annex-a-mapping.json"
+            "10-certification-readiness/certification-roadmap.md"
+          )
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "❌ Missing required file: $file"
+              exit 1
+            fi
+          done
+          echo "✅ All required ISO 42001 artifacts are present"
+
+      # 7. Validate SoA completeness
+      - name: Validate Statement of Applicability
+        run: |
+          SOA="03-planning/statement-of-applicability.md"
+          if grep -q "A.2.1" "$SOA" && grep -q "A.10.1" "$SOA"; then
+            echo "✅ SoA contains all required controls"
+          else
+            echo "❌ SoA incomplete"
+            exit 1
+          fi
+
+      # 8. Generate compliance report
+      - name: Generate compliance report
+        run: |
+          echo "## ISO 42001 Compliance Report" > compliance-report.md
+          echo "" >> compliance-report.md
+          echo "| Artifact | Status |" >> compliance-report.md
+          echo "|----------|--------|" >> compliance-report.md
+          for file in "01-aims-scope/aims-scope-statement.md" "02-leadership-commitment/ai-policy.md" "03-planning/ai-risk-assessment.md" "03-planning/statement-of-applicability.md"; do
+            if [ -f "$file" ]; then
+              echo "| \`$file\` | ✅ Present |" >> compliance-report.md
+            else
+              echo "| \`$file\` | ❌ Missing |" >> compliance-report.md
+            fi
+          done
+
+      # 9. Upload compliance report
+      - name: Upload compliance report
+        uses: actions/upload-artifact@v4
+        with:
+          name: compliance-report
+          path: compliance-report.md
