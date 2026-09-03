@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISO 42001 Compliance Dashboard — NovaTech</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            padding: 20px;
+            color: #1a365d;
+        }
+        .dashboard {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a365d, #2b6cb0);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+        }
+        .header h1 { font-size: 28px; font-weight: 700; }
+        .header p { opacity: 0.8; margin-top: 4px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .card h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .metric-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1a365d;
+        }
+        .metric-label {
+            color: #718096;
+            font-size: 14px;
+        }
+        .status-pass { color: #2e7d32; }
+        .status-fail { color: #c62828; }
+        .status-warning { color: #f57c00; }
+        .status-progress { color: #2b6cb0; }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .badge-pass { background: #e8f5e9; color: #2e7d32; }
+        .badge-fail { background: #ffebee; color: #c62828; }
+        .badge-progress { background: #e3f2fd; color: #2b6cb0; }
+        .badge-planned { background: #fff3e0; color: #f57c00; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            background: #f7fafc;
+            font-weight: 600;
+            color: #4a5568;
+        }
+        td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 12px;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #2b6cb0;
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+        .progress-fill.green { background: #2e7d32; }
+        .progress-fill.orange { background: #f57c00; }
+        .progress-fill.red { background: #c62828; }
+        .controls-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .control-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 8px;
+            background: #f7fafc;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+            .controls-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard">
+    <!-- Header -->
+    <div class="header">
+        <h1>🤖 ISO 42001 Compliance Dashboard</h1>
+        <p>NovaTech Financial Group — AI Management System (AIMS) • Q3 2026</p>
+        <p style="margin-top: 8px; font-size:14px;">Target Certification: Q4 2026</p>
+    </div>
+
+    <!-- Summary Metrics -->
+    <div class="grid">
+        <div class="card">
+            <h2>📊 Overall Compliance</h2>
+            <div class="metric-value">78%</div>
+            <div class="metric-label">AIMS Implementation Progress</div>
+            <div class="progress-bar"><div class="progress-fill" style="width:78%;"></div></div>
+        </div>
+        <div class="card">
+            <h2>✅ Controls Status</h2>
+            <div class="metric-value">26</div>
+            <div class="metric-label">Implemented / 38 Total</div>
+        </div>
+        <div class="card">
+            <h2>⚠️ Risks</h2>
+            <div class="metric-value">7</div>
+            <div class="metric-label">Identified • 1 Critical • 5 High • 1 Medium</div>
+        </div>
+        <div class="card">
+            <h2>📅 Certification</h2>
+            <div class="metric-value">Q4 2026</div>
+            <div class="metric-label">Target Date • 32-Week Roadmap</div>
+        </div>
+    </div>
+
+    <!-- Clause Progress -->
+    <div class="card" style="margin-bottom:20px;">
+        <h2>📋 Clause Implementation Status</h2>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; margin-top:12px;">
+            <div><strong>Clause 4</strong> <span class="badge badge-pass">Complete</span></div>
+            <div><strong>Clause 5</strong> <span class="badge badge-pass">Complete</span></div>
+            <div><strong>Clause 6</strong> <span class="badge badge-pass">Complete</span></div>
+            <div><strong>Clause 7</strong> <span class="badge badge-progress">In Progress</span></div>
+            <div><strong>Clause 8</strong> <span class="badge badge-progress">In Progress</span></div>
+            <div><strong>Clause 9</strong> <span class="badge badge-planned">Planned</span></div>
+            <div><strong>Clause 10</strong> <span class="badge badge-planned">Planned</span></div>
+        </div>
+    </div>
+
+    <!-- Risk Register -->
+    <div class="card" style="margin-bottom:20px;">
+        <h2>🟢 Risk Register Summary</h2>
+        <table>
+            <tr><th>Risk ID</th><th>Description</th><th>Inherent</th><th>Residual</th><th>Status</th></tr>
+            <tr><td>R-001</td><td>Algorithmic bias</td><td><span style="background:#c62828;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Critical</span></td><td><span style="background:#f57c00;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Medium</span></td><td><span class="badge badge-progress">In Progress</span></td></tr>
+            <tr><td>R-002</td><td>Unexplainable outputs</td><td><span style="background:#e65100;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">High</span></td><td><span style="background:#f57c00;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Medium</span></td><td><span class="badge badge-progress">In Progress</span></td></tr>
+            <tr><td>R-003</td><td>Economic drift</td><td><span style="background:#e65100;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">High</span></td><td><span style="background:#f57c00;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Medium</span></td><td><span class="badge badge-planned">Planned</span></td></tr>
+            <tr><td>R-004</td><td>Adversarial tampering</td><td><span style="background:#f57c00;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Medium</span></td><td><span style="background:#2e7d32;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Low</span></td><td><span class="badge badge-pass">Complete</span></td></tr>
+            <tr><td>R-005</td><td>Regulatory breach</td><td><span style="background:#e65100;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">High</span></td><td><span style="background:#f57c00;color:#fff;padding:2px 8px;border-radius:4px;font-size:12px;">Medium</span></td><td><span class="badge badge-progress">In Progress</span></td></tr>
+        </table>
+    </div>
+
+    <!-- Annex A Controls -->
+    <div class="card" style="margin-bottom:20px;">
+        <h2>📋 Annex A Controls Status</h2>
+        <div class="controls-grid">
+            <div class="control-item"><span>A.2.1 — AI Policy</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.2.2 — Policy Review</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.3.1 — Roles &amp; Responsibilities</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.3.2 — Reporting Concerns</span> <span class="badge badge-progress">In Progress</span></div>
+            <div class="control-item"><span>A.4.1 — Resources</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.5.1 — Impact Assessment</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.5.2 — Risk Assessment</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.6.1 — Requirements &amp; Design</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.6.2 — Development &amp; Testing</span> <span class="badge badge-progress">In Progress</span></div>
+            <div class="control-item"><span>A.6.3 — Deployment &amp; Operation</span> <span class="badge badge-progress">In Progress</span></div>
+            <div class="control-item"><span>A.6.4 — Decommissioning</span> <span class="badge badge-planned">Planned</span></div>
+            <div class="control-item"><span>A.7.1 — Data Acquisition</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.7.2 — Data Quality</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.8.1 — Transparency</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.9.1 — Responsible Use</span> <span class="badge badge-pass">Implemented</span></div>
+            <div class="control-item"><span>A.10.1 — Vendor Management</span> <span class="badge badge-progress">In Progress</span></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="text-align:center; color:#718096; font-size:13px; padding:20px 0;">
+        ISO/IEC 42001:2026 — AI Management System • NovaTech Financial Group • Q3 2026
+    </div>
+</div>
+</body>
+</html>
