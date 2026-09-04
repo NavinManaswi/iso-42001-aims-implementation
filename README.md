@@ -54,6 +54,7 @@ The project demonstrates:
 **Why It Matters:** ISO 42001 certification is becoming a **market differentiator** — it signals to customers, investors, and regulators that your organization takes AI governance seriously.
 
 iso-42001-aims-implementation/
+
 ├── 01-aims-scope/ # Clause 4 — Context of the Organization |
 
 ├── 02-leadership-commitment/ # Clause 5 — Leadership |
