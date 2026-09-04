@@ -61,14 +61,23 @@ iso-42001-aims-implementation/
 ├── 03-planning/ # Clause 6 — Planning |
 
 ├── 04-support/ # Clause 7 — Support  |
+
 ├── 05-operation/ # Clause 8 — Operation |
+
 ├── 06-performance-evaluation/ # Clause 9 — Performance Evaluation |
+
 ├── 07-improvement/ # Clause 10 — Improvement  |
+
 ├── 08-annex-a-controls/ # Annex A — 38 Controls |
+
 ├── 09-evidence-repository/ # Audit-Ready Evidence  |
+
 ├── 10-certification-readiness/ # Certification Preparation  |
+
 ├── scripts/ # Policy-as-Code & Automation  |
+
 ├── dashboard/ # Interactive Compliance Dashboard
+
 └── .github/workflows/ # CI/CD Compliance Validation
 
 ---
