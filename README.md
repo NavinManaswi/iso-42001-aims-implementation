@@ -166,10 +166,10 @@ Automated validation of compliance artifacts on every commit.
 
 | Channel | Details |
 |---------|---------|
-| **GitHub** | [github.com/yourusername](https://github.com/yourusername) |
+| **GitHub** | [github.com/NavinManaswi](https://github.com/NavinManaswi) |
 | **LinkedIn** | [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile) |
-| **Email** | your.email@domain.com |
-| **Substack** | [your-substack.com](https://your-substack.com) |
+| **Email** | manaswink@gmail.com |
+
 
 ---
 
