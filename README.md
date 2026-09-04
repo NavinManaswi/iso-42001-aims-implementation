@@ -55,8 +55,11 @@ The project demonstrates:
 
 iso-42001-aims-implementation/
 ├── 01-aims-scope/ # Clause 4 — Context of the Organization |
+
 ├── 02-leadership-commitment/ # Clause 5 — Leadership |
+
 ├── 03-planning/ # Clause 6 — Planning |
+
 ├── 04-support/ # Clause 7 — Support  |
 ├── 05-operation/ # Clause 8 — Operation |
 ├── 06-performance-evaluation/ # Clause 9 — Performance Evaluation |
